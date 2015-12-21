@@ -42,6 +42,11 @@ public class Query implements AllScopes {
     }
 
     @Override
+    public JoinScope leftJoin(String table) {
+        return raw("LEFT JOIN " + table);
+    }
+
+    @Override
     public FromScope on(String condition) {
         return raw("ON(" + condition + ")");
     }

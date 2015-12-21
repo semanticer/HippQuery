@@ -5,5 +5,6 @@ package net.semantic_error.hippquery.scope;
  */
 public interface FromScope extends WhereScope {
     JoinScope join(String table);
+    JoinScope leftJoin(String table);
     WhereScope where(String condition);
 }
