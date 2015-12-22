@@ -42,8 +42,18 @@ public class Query implements AllScopes {
     }
 
     @Override
+    public JoinScope join(String table, String alias) {
+        return raw("JOIN " + table + " AS " + alias);
+    }
+
+    @Override
     public JoinScope leftJoin(String table) {
         return raw("LEFT JOIN " + table);
+    }
+
+    @Override
+    public JoinScope leftJoin(String table, String alias) {
+        return raw("LEFT JOIN " + table + " AS " + alias);
     }
 
     @Override
