@@ -5,4 +5,5 @@ package net.semantic_error.hippquery.scope;
  */
 public interface SelectScope extends BaseScope  {
     FromScope from(String table);
+    FromScope from(String table, String alias);
 }

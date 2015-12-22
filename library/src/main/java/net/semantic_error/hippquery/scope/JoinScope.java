@@ -5,4 +5,5 @@ package net.semantic_error.hippquery.scope;
  */
 public interface JoinScope extends BaseScope {
     FromScope on(String condition);
+    FromScope on(String firstColumn, String secondColumn);
 }

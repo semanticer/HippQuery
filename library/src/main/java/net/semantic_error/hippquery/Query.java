@@ -37,6 +37,11 @@ public class Query implements AllScopes {
     }
 
     @Override
+    public FromScope from(String table, String alias) {
+        return raw("FROM " + table + " AS " + alias);
+    }
+
+    @Override
     public JoinScope join(String table) {
         return raw("JOIN " + table);
     }
@@ -59,6 +64,11 @@ public class Query implements AllScopes {
     @Override
     public FromScope on(String condition) {
         return raw("ON(" + condition + ")");
+    }
+
+    @Override
+    public FromScope on(String firstColumn, String secondColumn) {
+        return raw("ON(" + firstColumn + "=" + secondColumn + ")");
     }
 
     @Override
