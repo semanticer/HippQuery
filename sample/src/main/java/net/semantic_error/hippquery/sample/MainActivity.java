@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // TODO: 28. 12. 2015 Test with real database
         String q = Query.select("Name", sum("points"))
                 .from("Users AS u")
                 .join("Result AS r").on("r.user = u.id")
