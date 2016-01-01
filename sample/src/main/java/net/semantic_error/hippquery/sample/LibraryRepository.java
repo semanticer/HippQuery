@@ -19,12 +19,12 @@ public class LibraryRepository {
         db = openHelper.getWritableDatabase();
     }
 
-    void getBestAuthors() {
+    Cursor getBestAuthors() {
         String query = Query.select(AuthorkEntry.COLUMN_LAST_NAME)
                 .from(AuthorkEntry.COLUMN_FIRST_NAME)
                 .toString();
 
-        Cursor c = db.rawQuery(query, null);
+        return db.rawQuery(query, null);
     }
 
 }
